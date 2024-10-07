@@ -20,6 +20,10 @@ public:
         return 2 * M_PI * mRadius;
     }
 
+    float Area() {
+        return M_PI * std::pow(mRadius, 2);
+    }
+
     int GetRadius() { return mRadius; }
     void SetRadius(int radius) { mRadius = radius; }
 private:

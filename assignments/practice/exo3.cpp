@@ -17,6 +17,10 @@ public:
         return mSize * 4;
     }
 
+    int Area() {
+        return mSize * mSize;
+    }
+
     int GetSize() { return mSize; }
     void SetSize(int size) { mSize = size; }
 private:
