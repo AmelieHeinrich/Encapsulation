@@ -1,0 +1,8 @@
+# Ignore root DLL
+SDL2.dll
+
+# Ignore build directory
+build
+
+# Ignore ImGui config file
+imgui.ini
