@@ -6,3 +6,6 @@ build
 
 # Ignore ImGui config file
 imgui.ini
+
+# Ignore .vscode directory
+.vscode
