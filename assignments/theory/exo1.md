@@ -43,5 +43,6 @@ Un destructeur est appelé lorsque l'objet est détruit (mémoire libéré ou au
 
 ## 10. Quelles sont les différentes formes d’héritage en C++ ?
 
-- Classe mère
-- Classe fille (dérive de classe mère)
+- Public (Accessible a tout le monde)
+- Private (Accessible qu'a l'intérieur des méthodes de la classe ou aux classes mis en friend)
+- Protected (Accessible qu'a l'intérieur de la classe mais aussi à ses dérivées)
