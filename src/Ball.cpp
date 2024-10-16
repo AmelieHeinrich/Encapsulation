@@ -3,11 +3,12 @@
 #include <cmath>
 
 #include "Ball.hpp"
+#include "Util.hpp"
 
 Ball::Ball(Vector2i position, int radius)
     : mPosition(position), mRadius(radius)
 {
-    mVelocity = Vector2i(3, 3);
+    mVelocity = Vector2i(util::RandomInt(1, 4), util::RandomInt(1, 4));
     mColor = ColorU8();
 }
 
@@ -44,10 +45,10 @@ void Ball::Update(Vector2i bounds)
     mPosition.x += mVelocity.x;
 	mPosition.y += mVelocity.y;
 
-	if (mPosition.x >= bounds.x - mRadius - 2) mVelocity.x *= -1;
-	if (mPosition.x <= mRadius + 1) mVelocity.x *= -1;
-	if (mPosition.y >= bounds.y - mRadius - 2) mVelocity.y *= -1;
-	if (mPosition.y <= mRadius + 1) mVelocity.y *= -1;
+	if (mPosition.x >= bounds.x - mRadius - 2) mVelocity.x = -mVelocity.x;
+	if (mPosition.x <= mRadius + 1) mVelocity.x = -mVelocity.x;
+	if (mPosition.y >= bounds.y - mRadius - 2) mVelocity.y = -mVelocity.y;
+	if (mPosition.y <= mRadius + 1) mVelocity.y = -mVelocity.y;
 }
 
 bool Ball::HandleCollision(const Ball& b)
@@ -61,8 +62,9 @@ bool Ball::HandleCollision(const Ball& b)
 	int distanceSquared = deltaX * deltaX + deltaY * deltaY;
 
 	if (distanceSquared <= totalRadiusSquared) {
-		mVelocity.x *= -1;
-		mVelocity.y *= -1;
+		mVelocity.x = -mVelocity.x;
+		mVelocity.y = -mVelocity.y;
+		mPosition.x += (b.mRadius / 2) * mVelocity.x;
 		return true;
 	}
 	return false;
