@@ -2,6 +2,7 @@
 
 #include "App.hpp"
 
+// @note(ame): Undef main to avoid conflcit with SDL_main
 #undef main
 
 int main(void)
