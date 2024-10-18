@@ -34,7 +34,7 @@ Window::Window(uint32_t width, uint32_t height, const std::string& title)
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 
-    ImGui::StyleColorsDark();
+    ImGui::StyleColorsClassic();
 
     ImGui_ImplSDL2_InitForSDLRenderer(mWindow, mRenderer);
     ImGui_ImplSDLRenderer2_Init(mRenderer);

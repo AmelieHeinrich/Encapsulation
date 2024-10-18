@@ -9,7 +9,7 @@
 #include "Window.hpp"
 #include "Ball.hpp"
 
-constexpr int BALL_COUNT = 512;
+constexpr int BALL_COUNT = 0;
 constexpr int MAX_BALLS = 512;
 constexpr int WIDTH = 1920;
 constexpr int HEIGHT = 1080;
